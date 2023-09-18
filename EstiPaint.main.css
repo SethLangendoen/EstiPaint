@@ -1,0 +1,870 @@
+
+#mainPage {
+
+    height:700px; /* Adjust the height as needed */
+    overflow-x: hidden; 
+    overflow-y: auto;
+    background-color: rgb(240, 240, 240); /* Change the color to your desired shade of grey */
+    /* margin: 0 auto;
+    margin-top: 100px; Adjust the top margin to center vertically on the page */
+    box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.8); /* Adjust the shadow values as desired */
+    /* text-align: center; */
+    /* line-height: 200px; Adjust the line height to center the text vertically      */
+    padding-top: 10px; 
+}
+
+/* styling for the main page: */ 
+
+  #mainText {
+    margin: 0 auto; 
+    width: 50%; 
+  }
+
+  #mainText ul{
+    margin-top: 30px; 
+  }
+
+  #mainText h2{
+    font-size: 80px; 
+    margin-top: 100px; 
+    margin-bottom: 30px; 
+  }
+
+#websiteDesc{
+  font-size: 20px; 
+  margin-bottom: 30px; 
+  text-align: center; 
+}
+
+#featuresText{
+  text-align: center; 
+  font-size: 200%; 
+  font-style: italic; 
+
+}
+
+
+#logo{
+  font-size: 30px; 
+  margin-right: 200px; 
+}
+
+
+/* for the main header at the top of the website */ 
+
+#mainTable {
+  height: 80px; 
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(21, 214, 0);
+}
+
+/* #login{
+  width: 10%; 
+  margin-right: 500px; 
+} */
+
+
+.mainTableItems {
+    width: 10%; 
+    height: 50px;
+    font-size: 20px;
+    /* background-color: grey; */
+    color: white;
+    
+  }
+
+  .mainTableItems:hover {
+    /* background-color: rgb(0, 171, 236); */
+    border-bottom: 3px white;
+  }
+
+  
+
+  /* everything to do with the script, this has a div that surrounds everything. */ 
+  
+  #script {
+    margin: 0 auto;
+    margin-top: 0px;
+    width: 50%; 
+  }
+  
+  #scriptTable {
+    text-align: center;
+    margin: 0 auto; 
+  }
+  
+.custom-button {
+    display: inline-block;
+    padding: 20px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.1s ease;
+  }
+  .custom-button:hover {
+    background-color: #45a049;
+  }
+
+  /* the new item script div's and their elements inside are dealt with here */ 
+
+  .newDivClass {
+    color: black;
+    font-size: 16px;
+    border: 1px solid black; 
+    margin: 15px; 
+    height: 450px; 
+    display: flex; 
+    flex-direction: column; 
+    background-color: rgb(192, 192, 192);
+    text-align: left; 
+    border-radius: 10px; 
+    padding: 10px; 
+    /* other styles */
+  }
+
+  .customItemDivClass{
+    color: black;
+    font-size: 16px;
+    border: 1px solid black; 
+    margin: 15px; 
+    height: 240px; 
+    display: flex; 
+    flex-direction: column; 
+    background-color: rgb(192, 192, 192);
+
+    
+    text-align: left; 
+    border-radius: 10px; 
+    padding: 10px; 
+    /* other styles */
+  }
+
+  .customItemInputs{
+    width: 90%; 
+
+  }
+
+  .newTitleClass {
+    border: 1px solid black; 
+    width: 50%; 
+    margin: 5px; 
+    border-radius: 6px;
+  }
+
+ .newAdditionalCommentsClass {
+    border: 1px solid black; 
+    width: 97.5%; 
+    height: 100px; 
+    margin: 5px; 
+    resize: none; 
+    border-radius: 6px; 
+ }
+
+ .customItemAdditionalComments{
+  border: 1px solid black; 
+  width: 45%; 
+  height: 150px; 
+  margin: 5px; 
+  resize: none; 
+  border-radius: 6px; 
+ }
+
+
+
+ .coatsCellItem{
+    width: 30px;
+ }
+ .primerCoatsCellItem{
+  width: 30px;
+}
+
+
+.colourInput{
+  /* width: 150px;  */
+  height: 15px; 
+  margin: auto 0; 
+  margin-right: 10px; 
+  /* margin-left: 10px;  */
+}
+
+.calculateRoomDimensionsButton {
+  background-color: #333; /* Dark gray background color */
+  color: #ddd; /* Light gray text color */
+  padding: 8px 16px; /* Smaller padding */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px; /* Slightly smaller font size */
+}
+
+
+
+
+ .roomDimensions{
+    font-size: 20px;
+    color: black; 
+    margin: 0; 
+    padding-top: 10; 
+    line-height: 2;
+ }
+ 
+ .roomDimensionTable{
+    width: 100%; 
+    height: 50px; 
+ }
+
+ .titlesBeingCalculated{
+  text-align: left;
+  width: 180px; 
+  padding-right: 10px; 
+ }
+
+ .calculatedDimensonText{
+  width: 150px; 
+ }
+
+ .addTitle{
+    width: 100%; 
+    margin-top: 5px; 
+    margin-bottom: 30px; 
+    border: none; 
+    outline: none; 
+    font-size: 50px;
+    text-align: center; 
+    background-color: rgb(240, 240, 240); 
+ }
+
+ .addSubtitle{
+    width: 100%; 
+    margin: 0 auto; 
+    border: none; 
+    outline: none;
+    font-size: 20px;
+    text-align: center; 
+    background-color: rgb(240, 240, 240); 
+ }
+
+ .estimatedPaintDiv{
+    height: 50px; 
+    display: flex; 
+    flex-direction: row; 
+    padding: 0px; 
+
+}
+
+
+
+.paintInputDiv{
+    height: 20px; 
+    margin: auto 0; 
+    margin-left: 10px; 
+    /* width: 40px;  */
+}
+
+.customItemCalculations{
+  color: red; 
+  /* height: 30px;  */
+  text-align: center; 
+  border-bottom: 1px solid black;
+  width: 90px; 
+}
+
+.calculatedSizes{
+    color: red; 
+    /* height: 30px;  */
+    text-align: left; 
+    border-bottom: 1px solid black;
+}
+
+
+.calculatedPrices{
+  color: red; 
+  /* height: 30px;  */
+  text-align: left; 
+  border-bottom: 1px solid black;
+
+}
+.calculatedHours{
+  color: red; 
+  /* height: 30px;  */
+  text-align: left; 
+  border-bottom: 1px solid black;
+}
+
+.calculatedPaintRequired{
+  color: red; 
+  /* height: 30px;  */
+  text-align: left; 
+  border-bottom: 1px solid black;
+}
+
+.calculatedRoomDimensionTable{
+    width: 95%;
+    border-collapse: collapse; 
+    border-spacing: 0; 
+}
+
+.calculatedRoomDimensionTable th,
+.calculatedRoomDimensionTable td {
+  margin: 0;
+  width: 120px; 
+  padding-left: 10px;
+  height: 20px; 
+  
+}
+
+.rates{
+  text-align: left; 
+  width: 220px; 
+}
+
+/* CSS styles for the roomTablesDiv */
+.roomTablesDiv {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* CSS styles for the individual tables */
+.roomDimensionTable tr,
+.calculatedRoomDimensionTable tr {
+  flex: 1 1 45%;
+  max-width: 100%;
+  height: 20px; 
+}
+
+/* Styling for input boxes with class "size" */
+.size {
+  border: none;
+  border-radius: 2px;
+  text-align: center; 
+  padding-left: 5px;
+  padding-right: 5px; 
+  font-size: 12px;
+  background: linear-gradient(to bottom, #f0f0f0, #e0e0e0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.01);
+  transition: box-shadow 0.1s ease;
+  width: 80px;
+}
+
+/* Hover effect */
+.size:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Focus effect */
+.size:focus {
+  outline: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+}
+
+
+/* CSS for the delete button */
+.delete-button {
+  display: none;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+/* Show delete button on option hover */
+option:hover .delete-button {
+  display: inline;
+} 
+
+.jobSummaryTableCells{
+  width: 400px; 
+  font-size: 20px; 
+
+}
+
+.calculatedJobSummaryTableCells{
+  text-align: right; 
+}
+
+p,
+h1,
+h2 {
+  color: rgb(255, 255, 255);
+}
+
+#freeEstimateBelowTitle{
+  text-align: center;
+}
+
+.calculatedValuesDiv {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next line if needed */
+  gap: 30px; /* Adjust this value to control the gap between items */
+  color: black; 
+}
+
+/* Apply these styles to the flex items (child elements) */
+
+#generateButtons {
+  text-align: center;
+  display: flex; /* Use flexbox to align items horizontally */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center-align items horizontally */
+}
+
+.custom-button-container {
+  width: 100%; /* Buttons take full width of container */
+  margin: 5px 0; /* Vertical margin for spacing */
+}
+
+.custom-button {
+  width: 100%; /* Buttons take full width of their container */
+}
+
+#estimateSummaryTable {
+  width: 100%; /* Set the content's width to match the buttons */
+}
+
+#estimateSummaryTable table {
+  width: 100%; /* Table takes full width of the container */
+  border-collapse: collapse; /* Optional: collapse table borders */
+}
+
+
+/*
+#estimateSummaryTable tr {
+  text-align: left; 
+  border-bottom: 1px solid #ccc; 
+  padding: 5px;  
+  display: flex; 
+  align-items: center;
+}
+*/ 
+
+.estimateSummaryTableRows {
+  text-align: left; /* Align table cells left */
+  border-bottom: 1px solid #ccc; /* Optional: add a border for visualization */
+  padding: 5px; /* Optional: add padding for cell content */
+  display: flex; 
+  align-items: center;
+  width: 100%; 
+}
+
+.paintEstimateTableRows{
+  text-align: left; /* Align table cells left */
+  padding: 5px; /* Optional: add padding for cell content */
+  display: flex; 
+  align-items: center;
+  border-bottom: 1px solid black; 
+  height: 25px; 
+  width: 100%; 
+}
+
+.paintEstimateTableRows > th,
+.paintEstimateTableRows > p,
+.paintEstimateTableRows > input {
+  width: 33.33%; /* Set an equal width for each element */
+  text-align: center; /* Center the text horizontally */
+  color: white;
+}
+
+.draggable-item {
+  user-select: none;
+  position: relative;
+}
+
+
+
+
+
+
+#estimateSummaryTable input {
+  margin-left: 10px; /* Add left margin */
+  outline: none; 
+  border: none; 
+  background-color: rgb(75, 75, 75); 
+  height: 25px; 
+
+}
+
+
+.divsAligningCustomItem {
+  display: flex;
+  justify-content: space-between; /* Adjust as needed */
+  align-items: center; /* Adjust as needed */
+}
+
+#presetTitle{
+ font-size: 30px; 
+ text-align: center; 
+ width: 100%; 
+ margin: 5px; 
+ margin-top: 30px; 
+ margin-bottom: 10px; 
+}
+
+
+#body{
+  background-color: rgb(40, 40, 40);
+  overflow-x: hidden;
+
+}
+
+
+#welcome{
+  font-size: 48px;
+  color: #00ff00; /* Bright green color */
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  letter-spacing: 2px;
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px;
+  /* background-color: #000000; Black background */
+}
+
+/* this is for the list items under FAQ */
+
+  ul.faq {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  ul.faq li {
+    position: relative;
+    padding-left: 20px;
+    color: #00ff00; /* Bright green color */
+  }
+
+  ul.faq li:before {
+    content: "";
+    position: absolute;
+    top: 20%;
+    left: 0;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background-color: #00ff00; /* Bright green color */
+    transform: rotate(45deg);
+  }
+
+  ul.faq li:hover:before {
+    transform: translate(-10%, 10%) translateX(5px);
+    transition: transform 0.25s ease;
+  }
+
+  ul.faq li a {
+    text-decoration: none; /* Remove link underline */
+    color: inherit; /* Inherit the color from the parent */
+  }
+
+
+/* this is for the preset styling:  */
+
+#presets {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  #presets th,
+  #presets td {
+    border-bottom: 1px solid #000;
+    padding: 10px;
+    background-color: rgba(0, 0, 255, 0.1);
+    color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+  }
+
+  #presets th {
+    text-align: left;
+    width: 40%;
+  }
+
+  #presets td input[type="text"] {
+    border: none;
+    background-color: transparent;
+    color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    width: 100%;
+    padding: 5px;
+  }
+
+/* Testing the new header:   */
+
+
+/* Reset some default styles */
+body, h1, h2, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Apply styles to the custom header */
+.custom-header {
+  background-color: #000; /* Black background */
+  color: #fff; /* White text */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+/* Style the custom logo link */
+.logo a {
+  color: #00cc00; /* Green color */
+  font-size: 24px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.logo a:hover {
+  color: #5dff5d; /* Green color */
+  font-size: 24px;
+  text-decoration: none;
+  font-weight: bold;
+}
+/* Style the custom navigation links */
+.custom-nav ul {
+  list-style-type: none;
+  display: flex;
+}
+
+.custom-nav li {
+  margin-right: 20px;
+  position: relative; /* Add this line */
+}
+
+.custom-nav a {
+  color: #ccc; /* Grey color */
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Change link color on hover */
+.custom-nav a:hover {
+  color: #fff; /* White color */
+}
+
+/* Hide the dropdown menu by default */
+.faq {
+  display: none;
+  position: absolute;
+  background-color: #000; /* Black background */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  top: 100%; /* Position it below the list item */
+}
+
+/* Style the dropdown links */
+.faq li {
+  margin: 0;
+  padding: 0;
+}
+
+.faq a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #ccc; /* Grey color */
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* Change link color on hover */
+.faq a:hover {
+  color: #fff; /* White color */
+}
+
+/* Display the dropdown menu when hovering over FAQ */
+.custom-nav li:hover .faq {
+  display: block;
+}
+
+
+
+
+/* for the side bar */ 
+
+.sidebar {
+  position: fixed;
+  top: 8%;
+  left: -310px; /* Hide the sidebar off-screen */
+  width: 350px;
+  height: 90%;
+  background-color: #333;
+  display: flex; 
+  border-top-right-radius: 50px; 
+  border-bottom-right-radius: 50px; 
+  border-top: 1px solid white; 
+  border-bottom: 1px solid white; 
+
+  transition: left 0.3s;
+  color: #fff;
+}
+
+.sidebar input{
+  width: 40px; 
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  width: 400px
+}
+
+
+.sidebar li {
+  padding: 10px;
+  width: 270px; 
+}
+
+/* #toggleSidebar{
+  color: #333; 
+  font-size: 30px; 
+  
+} */
+
+#toggleSidebar{
+  background-color:rgb(30, 30, 30); 
+  border-top-right-radius: 50px; 
+  border-bottom-right-radius: 50px; 
+  width: 50px; 
+  border: 1px solid white; 
+  border-left: none; 
+
+}
+
+.sidebar button {
+  width: 100%; /* Make the buttons 95% width of their parent (ul) */
+  /*margin: 5px 0; /* Add some margin for spacing between buttons */ 
+  outline: none; 
+  background-color:rgb(30, 30, 30); 
+  color: white; 
+  outline: none; 
+  border: none; 
+
+}
+
+/* These are for the sliders on the main page */ 
+
+#sliderContainer {
+  display: flex;
+  flex-direction: column; /* Set to vertical layout */
+}
+
+#text{
+  margin: 10px; 
+  width: auto; 
+}
+
+#text h2{
+  text-align: center; 
+}
+
+#sliderImage {
+  width: 600px;
+  height: 150px;
+  justify-content: center;
+  border-radius: 30px;
+  margin-top: auto; /* Push the image to the bottom of the container */
+  margin-bottom: auto; /* Push the image to the top of the container */
+}
+
+#sliderImage2 {
+  position: relative; 
+  width: 600px;
+  height: 150px;
+  justify-content: center;
+  border-radius: 30px;
+  margin-top: auto; /* Push the image to the bottom of the container */
+  margin-bottom: auto; /* Push the image to the top of the container */
+  margin-left: auto; 
+}
+
+#interactiveDesign {
+  padding: 10px; 
+  display: flex;
+  background-color: grey;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  width: 1200px;
+  height: 200px;
+  position: relative;
+  left: 0px; 
+  transition: left 0.5s ease; /* Smooth sliding transition */
+  text-align: center;
+  margin-bottom: 50px; 
+}
+
+
+#calculatePaint{
+  padding: 10px; 
+  display: flex;
+  background-color: grey;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  width: 1200px;
+  height: 200px;
+  position: relative;
+  left: calc(100% - 1220px); /* Move it to the right side */
+  transition: right 0.5s ease; /* Smooth sliding transition */
+  text-align: center;
+  margin-bottom: 50px; 
+}
+
+#pdfGenerator {
+  padding: 10px; 
+  display: flex;
+  background-color: grey;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  width: 1200px;
+  height: 200px;
+  position: relative;
+  left: 0px; /* Start off-screen to the left */
+  transition: left 0.5s ease; /* Smooth sliding transition */
+  text-align: center;
+  margin-bottom: 50px; 
+
+}
+
+#calculateRoomSpecs {
+  padding: 10px; 
+  display: flex;
+  background-color: grey;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  width: 1200px;
+  height: 200px;
+  position: relative;
+  left: 0px; /* Start off-screen to the left */
+  transition: left 0.5s ease; /* Smooth sliding transition */
+  text-align: center;
+  margin-bottom: 50px; 
+}
+
+#calculateEstimate{
+  padding: 10px; 
+  display: flex;
+  background-color: grey;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  width: 1200px;
+  height: 200px;
+  position: relative;
+  left: calc(100% - 1220px); /* Move it to the right side */
+  transition: right 0.5s ease; /* Smooth sliding transition */
+  text-align: center;
+  margin-bottom: 50px; 
+}
+
+
+
+
+
+

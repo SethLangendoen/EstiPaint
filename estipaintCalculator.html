@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>EstiPaint</title>
+  <link rel="stylesheet" type="text/css" href="EstiPaint.main.css">
+
+
+
+<!-- Side taskbar with cool design that opens up to hold buttons. 
+    Save estimte option that saves the preset values and elements in the script with their current inputs
+    Save presets to select saved presets. 
+    remove outline from title and subtitles. 
+
+-->
+
+</head>
+<body id = "body">
+
+<header class="custom-header">
+    <div class="logo">
+        <a href="EstiPaint.main.html">EstiPaint</a>
+    </div>
+    <nav class="custom-nav">
+        <ul>
+            <li><a href="#estipaintCalculator.html">Estimate Calculator</a></li>
+
+            <li class="dropdown">
+                <a href="#">FAQ</a>
+                <!-- <ul class="faq">
+                    <li><a href="#howTo">How do I use EstiPaint?</a></li>
+                    <li><a href="#fullVersion">What's included in EstiPaint's full version?</a></li>
+                    <li><a href="#determiningPresets">How do I set accurate presets?</a></li>
+                </ul> -->
+            </li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Log In</a></li>
+
+        </ul>
+    </nav>
+</header>
+
+
+
+
+<!-- Everything to do with the main text of the website that goes above the script -->
+
+<!-- <div id = "mainText">
+
+
+
+    <h2>Fast, Easy, Accurate.</h2>
+
+    <p>EstiPaint makes your painting estimates simple, easy to understand and organized.
+        EstiPaint is a software that helps calculate the total cost of a painting project by breaking down the 
+        costs into fragments. EstiPaint also provides a printable work order for painters to provide clarity at the job. </p>
+
+    <ul>
+        <li>Calculate job costs</li>
+        <li>Create work orders </li>
+        <li>Create an account to save estimate history</li>
+        <li>Print or download as PDF</li>
+    </ul>
+
+    <h2>FAQ: </h2>
+    <ul class = 'faq'>
+        <li ><p><a href = '#howTo'>How do I use EstiPaint?</a></p></li>
+        <li ><p><a href = '#fullVersion'>What's included in EstiPaint's full version?</a></p></li>
+        <li ><p><a href = '#determiningPresets'>How do I set accurate presets?</a></p></li>
+
+    </ul>
+
+
+
+    <br>
+
+
+    <h2 id = 'freeEstimateBelowTitle'>Create a free estimate below: </h2>
+
+</div> -->
+
+<!-- Everything that has to do with the script itself for creating a new estimate. -->
+<div id = "script">
+
+    <h2 id = presetTitle>Presets</h2>
+
+    <table id="presets">
+        <tr>
+          <th class="rates">Wall rate</th>
+          <td class = 'inputBox'><input type="text" placeholder="$/sqft" id="wallRate"></td>
+        </tr>
+        <tr>
+          <th class="rates">Baseboard rate</th>
+          <td class = 'inputBox'><input type="text" placeholder="$/sqft" id="baseboardRate"></td>
+        </tr>
+        <tr>
+          <th class="rates">Ceiling rate</th>
+          <td class = 'inputBox'><input type="text" placeholder="$/sqft" id="ceilingRate"></td>
+        </tr>
+        <tr>
+          <th class="rates">Average wall efficiency</th>
+          <td class = 'inputBox'><input type="text" placeholder="sqft/hour" id="wallEfficiency"></td>
+        </tr>
+        <tr>
+          <th class="rates">Average baseboard efficiency</th>
+          <td class = 'inputBox'><input type="text" placeholder="sqft/hour" id="baseboardEfficiency"></td>
+        </tr>
+        <tr>
+          <th class="rates">Average ceiling efficiency</th>
+          <td class = 'inputBox'><input type="text" placeholder="sqft/hour" id="ceilingEfficiency"></td>
+        </tr>
+      </table>
+      
+    <br>
+
+    <table id = "scriptTable"> 
+        <tr>
+            <th class = "scriptItems"><button class="custom-button" id = "addTitleButton">Title</button></th>
+            <th class = "scriptItems"><button class="custom-button" id = "addSubtitleButton">Subtitle</button></th>
+            <th class = "scriptItems"><button class="custom-button" id = "addButton">Room</button></th>
+            <th class = "scriptItems"><button class="custom-button" id = "customItem">Custom Item</button></th>
+            <th class = "scriptItems"><button class="custom-button">Add Materials</button></th>
+            <th class = "scriptItems"><button class="custom-button" id = "deleteButton">Delete Item</button></th>
+        </tr>
+    </table>
+
+
+
+<div id = sidebarPositioning>
+        <!-- this div contains all of the estimate content -->
+        <div id = "mainPage"></div>  
+    <!--
+        <div class="sidebar">
+            <ul>
+                <li><button id="openEstimate">Estimates</button></li>
+
+
+                <li><button> presets</button></li>
+                <li><button> custom Items</button></li>
+                <li><button> rooms</button></li>
+                <li><button> materials</button></li>
+
+
+            </ul>
+            <button id="toggleSidebar"></button>
+        </div>
+    -->
+
+
+        
+        <div class="content">
+            <!-- Your main content goes here -->
+        </div>
+</div>
+
+
+
+    <div id="jobSummary">
+        <div id="generateButtons">
+            <div class="custom-button-container">
+                <button class="custom-button" id="genEstimate">Generate Estimate Summary</button>
+            </div>
+            <div id="estimateSummaryTable"></div>
+            <div class="custom-button-container">
+                <button class="custom-button" id = generateWorkOrder>Generate Work Order</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- script for the pdf -->
+    <script>
+
+        //import PDFTitle from './PDFTitle.js';
+
+        // globally used variables: 
+        const script = document.getElementById('mainPage'); 
+        const scriptChildren = script.children; 
+
+        // Your JavaScript code to use jsPDF goes here
+        document.getElementById("generateWorkOrder").addEventListener("click", function () {
+            // Example code to create a PDF using jsPDF
+            window.jsPDF = window.jspdf.jsPDF;
+            var doc = new jsPDF();
+
+            // resetting values for new PDF's. 
+            var newY = 0; 
+
+            for (var child of scriptChildren) {
+            
+                // runs if it finds an element in the script with the class for a title. 
+                var title = child.querySelector('#addTitle');
+                if (child.classList.contains('addTitle')) {
+                    // Center the text horizontally on the page
+                    //var pageWidth = doc.internal.pageSize.width;
+                    var textWidth = doc.getStringUnitWidth(child.value) * doc.internal.getFontSize();
+                    //var xOffset = (pageWidth - textWidth) / 2;
+                    // Set top and bottom margins + font sie
+                    var topMargin = 10;
+                    var bottomMargin = 10; 
+                    xOffset = 15; 
+                    doc.setFontSize(30);
+                    //Increment the Y-coordinate for the next element
+                    doc.text(child.value, xOffset, topMargin + newY);
+                    newY += 30;
+                }
+
+                // runs if it finds an element in the script with the class for a subtitle. 
+                // var subtitle = child.querySelector('#addSubtitle');
+                // if (child.classList.contains('addSubtitle')) {
+                //     // Center the text horizontally on the page
+                //     //var pageWidth = doc.internal.pageSize.width;
+                //     var textWidth = doc.getStringUnitWidth(child.value) * doc.internal.getFontSize();
+                //     //var xOffset = (pageWidth - textWidth) / 2;
+                //     // Set top and bottom margins + font sie
+                //     var topMargin = 5;
+                //     var bottomMargin = 5; 
+                //     var xOffset = 5; 
+                //     doc.setFontSize(22);
+                //     //Increment the Y-coordinate for the next element
+                //     doc.text(child.value, xOffset, topMargin + newY);
+                //     newY += 10;
+                // }
+                
+                var subtitle = child.querySelector('#addSubtitle');
+                if (child.classList.contains('addSubtitle')) {
+                    // Center the text horizontally on the page
+                    //var pageWidth = doc.internal.pageSize.width;
+                    var textWidth = doc.getStringUnitWidth(child.value) * doc.internal.getFontSize();
+                    //var xOffset = (pageWidth - textWidth) / 2;
+                    // Set top and bottom margins + font size
+                    var topMargin = 10;
+                    var bottomMargin = 5; 
+                    var xOffset = 5; 
+                    var subtitleFontSize = 26;
+                    
+                    // Increment the Y-coordinate for the next element
+                    var startY = topMargin + newY;
+                    
+                    // Draw a horizontal line underneath the subtitle
+                    var lineHeight = 1; // Adjust the line height as needed
+                    doc.setLineWidth(lineHeight);
+                    doc.line(xOffset, startY + 2, doc.internal.pageSize.width - xOffset, startY + 2);
+
+                    // Set the font size and add the subtitle text
+                    doc.setFontSize(subtitleFontSize);
+                    doc.text(child.value, xOffset, startY); // Adjust the vertical position as needed
+
+                    // Update newY
+                    newY += + 12; 
+                    
+                }
+
+                // runs if a custom item is found: 
+                var customItem = child.querySelector('#customItemDivClass')
+                if(child.classList.contains('customItemDivClass')){
+                    const customItemTitle = child.querySelector("#newTitleClass");
+                    const customItemAdditionalComments = child.querySelector('#customItemAdditionalComments');
+                    var topMargin = 10;
+                    var bottomMargin = 5; 
+                    var itemTitlexOffset = 10; 
+                    var xOffset = 15; 
+                    doc.setFontSize(16); 
+                    doc.text(customItemTitle.value, itemTitlexOffset, topMargin + newY);
+                    doc.setFontSize(12); 
+                    if (customItemAdditionalComments.value) { // there are additional comments inputted
+                        const startX = xOffset;
+                        const startY = newY + 16; // Store the initial Y position
+                        // Split the comments into lines based on the width of the text box
+                        const maxWidth = 700; // Replace with the width of your text box
+                        const lines = doc.splitTextToSize(roomItemAdditionalComments.value, maxWidth);
+                        // Calculate the height of each line
+                        const lineHeight = doc.getLineHeight();
+                        console.log(lineHeight); 
+                        //const totalTextHeight = lines.length * (lineHeight/2); I hard coded the line b4 by searching for the correct height 
+                        const totalTextHeight = lines.length * 5.2;
+                        // Add the text to the document
+                        doc.text(lines, startX, startY);
+
+                        // Update newY based on the calculated text height
+                        newY += totalTextHeight + 17; // Separates additional comments and paint desc.
+                    } else { // there are no additional comments inputted
+                        newY += 17;
+                    }
+                    // variables to get the inputs in the customItem
+                    const customItemInputs = child.getElementsByTagName('input'); 
+
+                    var itemName = customItemInputs[0].textContent; 
+                    var numberOfItems = customItemInputs[1].textContent; 
+                    var colour = customItemInputs[2].textContent; 
+                    newY += 8; 
+                    doc.text('Paint ' + numberOfItems  + ' ' + itemName + ' using ' + colour,xOffset,newY); 
+
+                }
+
+
+                // runs if it finds a room item in the script with the class for a subtitle. 
+                var roomItem = child.querySelector('#newDivClass');
+                if (child.classList.contains('newDivClass')) {
+                    var topMargin = 10;
+                    var bottomMargin = 5; 
+                    var itemTitlexOffset = 10; 
+                    var xOffset = 15; 
+                    doc.setFontSize(16); 
+                    const roomItemTitle = child.querySelector('#newRoomTitle');
+                    const roomItemAdditionalComments = child.querySelector('#newRoomAdditionalComments');
+                
+                    doc.text(roomItemTitle.value, itemTitlexOffset, topMargin + newY);
+                    doc.setFontSize(12); 
+                    if (roomItemAdditionalComments.value) { // there are additional comments inputted
+                        const startX = xOffset;
+                        const startY = newY + 16; // Store the initial Y position
+                        // Split the comments into lines based on the width of the text box
+                        const maxWidth = 700; // Replace with the width of your text box
+                        const lines = doc.splitTextToSize(roomItemAdditionalComments.value, maxWidth);
+                        // Calculate the height of each line
+                        const lineHeight = doc.getLineHeight();
+                        console.log(lineHeight); 
+                        //const totalTextHeight = lines.length * (lineHeight/2); I hard coded the line b4 by searching for the correct height 
+                        const totalTextHeight = lines.length * 5.2;
+                        // Add the text to the document
+                        doc.text(lines, startX, startY);
+
+                        // Update newY based on the calculated text height
+                        newY += totalTextHeight + 17; // Separates additional comments and paint desc.
+                    } else { // there are no additional comments inputted
+                        newY += 17;
+                    }
+
+                    
+
+                    // get reference to paint coats
+                    const paintCoats = Array.from(child.getElementsByClassName('coatsCellItem'));
+
+                    // get reference to primer coats
+                    const primerCoats = Array.from(child.getElementsByClassName('primerCoatsCellItem'));
+
+                    // get reference to colours and primers (even is colour [0,2,4], odd is primer [1,3,5]. )
+                    const colours = Array.from(child.getElementsByClassName('colours'));
+
+                    // get reference to primer 
+                    const primers = Array.from(child.getElementsByClassName('primers'));
+
+                    doc.setFontSize(12);
+
+                    
+                    for(var i = 0; i < paintCoats.length; i++){
+
+
+                        var numberOfPaintCoats = paintCoats[i].value + ''; 
+                        var numberOfPrimerCoats = primerCoats[i].value + ''; 
+                        var colour = colours[i].value + '';
+                        var primer = primers[i].value + '';
+                        
+
+                        switch(i){
+                            case 0: // this is walls
+                                if(numberOfPrimerCoats > 0 || numberOfPaintCoats > 0){ 
+                                    doc.text('walls: ',xOffset, newY);
+                                }
+                                if(numberOfPrimerCoats>0){
+                                    newY += 5; 
+                                    doc.text('Prime ' + numberOfPrimerCoats + ' coats of ' + primer + ' on walls',xOffset,newY); 
+                                }
+                                if(numberOfPaintCoats>0){
+                                    newY += 5; 
+                                    doc.text('Paint ' + numberOfPaintCoats + ' coats of ' + colour + ' on walls',xOffset,newY); 
+                                }
+                                if(numberOfPrimerCoats != 0 || numberOfPaintCoats != 0){newY+= 8;}
+                                break;
+                            case 1: // this is ceilings
+                                if(numberOfPrimerCoats > 0 || numberOfPaintCoats > 0){ 
+                                    doc.text('Ceilings: ',xOffset,newY);
+                                }
+                                if(numberOfPrimerCoats>0){
+                                    newY += 5; 
+                                    doc.text('Prime ' + numberOfPrimerCoats + ' coats of ' + primer + ' on ceilings',xOffset,newY); 
+                                }
+                                if(numberOfPaintCoats>0){
+                                    newY += 5; 
+                                    doc.text('Paint ' + numberOfPaintCoats + ' coats of ' + colour + ' on ceilings',xOffset,newY); 
+                                }
+                                if(numberOfPrimerCoats != 0 || numberOfPaintCoats != 0){newY+= 8;}
+                                break;
+                            case 2: // this is baseboards
+                                if(numberOfPrimerCoats > 0 || numberOfPaintCoats >0){ 
+                                    doc.text('Baseboards: ',xOffset,newY);
+                                }
+                                if(numberOfPrimerCoats>0){
+                                    newY += 5; 
+                                    doc.text('Prime ' + numberOfPrimerCoats + ' coats of ' + primer + ' on baseboards',xOffset,newY); 
+                                }
+                                if(numberOfPaintCoats>0){
+                                    newY += 5; 
+                                    doc.text('Paint ' + numberOfPaintCoats + ' coats of ' + colour + ' on baseboads',xOffset,newY); 
+                                }
+                                if(numberOfPrimerCoats != 0 || numberOfPaintCoats != 0){newY+= 8;}
+                                break;
+                        }
+                    }
+                }
+        }
+            doc.save("WorkOrder.pdf");
+        });
+        
+
+
+
+
+
+    </script>
+    
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+</div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+<script src="EstiPaint.main.js"></script>
+<script type="module" src="WorkOrder.js"></script>
+
+
+</body>
+</html>
