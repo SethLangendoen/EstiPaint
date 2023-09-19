@@ -15,9 +15,21 @@
 
 /* styling for the main page: */ 
 
-  #mainText {
-    margin: 0 auto; 
-    width: 50%; 
+#mainText {
+  margin: 0 auto; /* Center horizontally */
+  width: 750px; /* Adjust width as needed */
+  padding-left: 50px; /* Left margin */
+  padding-right: 50px; /* Right margin */
+}
+
+
+
+
+  @media screen and (max-width: 900px) {
+    #mainText {
+      width: auto; /* Allow the width to become flexible */
+      /* max-width: 90%; Limit the width when it starts squeezing */
+    }
   }
 
   #mainText ul{
@@ -28,6 +40,7 @@
     font-size: 80px; 
     margin-top: 100px; 
     margin-bottom: 30px; 
+    text-align: center; 
   }
 
 #websiteDesc{
@@ -44,9 +57,10 @@
 }
 
 
-#logo{
+.logo{
   font-size: 30px; 
-  margin-right: 200px; 
+  border: 1px, solid white; 
+  min-width: 120px; 
 }
 
 
@@ -87,17 +101,32 @@
   #script {
     margin: 0 auto;
     margin-top: 0px;
-    width: 50%; 
+    max-width: 700px; 
+    min-width: 400px; 
   }
+
+  /* Media query to control width behavior */
+@media screen and (max-width: 700px) {
+  #script {
+    width: auto; /* Allow the width to become flexible */
+    /* max-width: 90%; Limit the width when it starts squeezing */
+  }
+}
+
   
   #scriptTable {
     text-align: center;
-    margin: 0 auto; 
+    /* margin: 0 auto;  */
+    margin: 5px; 
+    width: 100%
   }
+
   
 .custom-button {
     display: inline-block;
-    padding: 20px 20px;
+    width: 100%;
+    padding: 5px 5px;
+    height: 50px; 
     font-size: 16px;
     font-weight: bold;
     text-align: center;
@@ -509,7 +538,6 @@ h2 {
 #body{
   background-color: rgb(40, 40, 40);
   overflow-x: hidden;
-
 }
 
 
@@ -610,7 +638,13 @@ body, h1, h2, p, ul, li {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
+  width: 100%
 }
+
+#logIn{
+  margin-right: 40px; 
+}
+
 
 /* Style the custom logo link */
 .logo a {
@@ -635,6 +669,9 @@ body, h1, h2, p, ul, li {
 .custom-nav li {
   margin-right: 20px;
   position: relative; /* Add this line */
+  text-align: center; 
+  width: auto;
+  min-width: 40px; 
 }
 
 .custom-nav a {
@@ -642,6 +679,7 @@ body, h1, h2, p, ul, li {
   text-decoration: none;
   font-size: 16px;
   font-weight: bold;
+  text-align: center; 
 }
 
 /* Change link color on hover */
@@ -755,55 +793,69 @@ body, h1, h2, p, ul, li {
 #sliderContainer {
   display: flex;
   flex-direction: column; /* Set to vertical layout */
+  width: auto; 
 }
 
 #text{
   margin: 10px; 
-  width: auto; 
+  width: 40%; 
+  min-width: 40%; 
 }
 
 #text h2{
   text-align: center; 
 }
 
+
 #sliderImage {
-  width: 600px;
-  height: 150px;
+  min-width: 50%;
+  max-width: 100%; /* Set the maximum width relative to the container's width */
+  max-height: 90%;
+  min-height: 180px;
+  height: auto; /* Allow the height to adjust proportionally */
   justify-content: center;
   border-radius: 30px;
-  margin-top: auto; /* Push the image to the bottom of the container */
-  margin-bottom: auto; /* Push the image to the top of the container */
+  margin: auto; /* Center the image both horizontally and vertically */
 }
 
+
 #sliderImage2 {
-  position: relative; 
-  width: 600px;
-  height: 150px;
+  min-width: 50%;
+  max-width: 100%; /* Set the maximum width relative to the container's width */
+  max-height: 80%;
+  min-height: 180px;
+  /* padding-right: 20px;  */
+  height: auto; /* Allow the height to adjust proportionally */
   justify-content: center;
   border-radius: 30px;
-  margin-top: auto; /* Push the image to the bottom of the container */
-  margin-bottom: auto; /* Push the image to the top of the container */
-  margin-left: auto; 
+  margin: auto; /* Center the image both horizontally and vertically */
 }
 
 #interactiveDesign {
-  padding: 10px; 
+  padding: 10px;
   display: flex;
   background-color: grey;
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
-  width: 1200px;
-  height: 200px;
+  width: 1200px; /* Start with a fixed width of 80% */
+  height: 200px; /* Start with a fixed height of 200px */
   position: relative;
-  left: 0px; 
+  left: 0px;
   transition: left 0.5s ease; /* Smooth sliding transition */
   text-align: center;
-  margin-bottom: 50px; 
+  margin-bottom: 50px;
 }
 
+/* Media query to control width behavior */
+@media screen and (max-width: 1220px) {
+  #interactiveDesign {
+    width: auto; /* Allow the width to become flexible */
+    /* max-width: 90%; Limit the width when it starts squeezing */
+  }
+}
 
-#calculatePaint{
-  padding: 10px; 
+#calculatePaint {
+  padding: 10px;
   display: flex;
   background-color: grey;
   border-top-left-radius: 50px;
@@ -811,45 +863,71 @@ body, h1, h2, p, ul, li {
   width: 1200px;
   height: 200px;
   position: relative;
-  left: calc(100% - 1220px); /* Move it to the right side */
+  left: calc(100% - 1200px); /* Adjust based on element width */
   transition: right 0.5s ease; /* Smooth sliding transition */
   text-align: center;
-  margin-bottom: 50px; 
+  margin-bottom: 50px;
 }
 
+/* Media query to control width behavior */
+@media screen and (max-width: 1220px) {
+  #calculatePaint {
+    width: auto; /* Allow the width to become flexible */
+    /* max-width: 90%; Limit the width when it starts squeezing */
+    left: 0; /* Reset the left position to start from the left side */
+  }
+}
+
+
 #pdfGenerator {
-  padding: 10px; 
+  padding: 10px;
   display: flex;
   background-color: grey;
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
-  width: 1200px;
-  height: 200px;
+  width: 1200px; /* Start with a fixed width of 80% */
+  height: 200px; /* Start with a fixed height of 200px */
   position: relative;
-  left: 0px; /* Start off-screen to the left */
+  left: 0px;
   transition: left 0.5s ease; /* Smooth sliding transition */
   text-align: center;
-  margin-bottom: 50px; 
+  margin-bottom: 50px;
+}
 
+/* Media query to control width behavior */
+@media screen and (max-width: 1220px) {
+  #pdfGenerator {
+    width: auto; /* Allow the width to become flexible */
+    /* max-width: 90%; Limit the width when it starts squeezing */
+  }
 }
 
 #calculateRoomSpecs {
-  padding: 10px; 
+  padding: 10px;
   display: flex;
   background-color: grey;
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
-  width: 1200px;
-  height: 200px;
+  width: 1200px; /* Start with a fixed width of 80% */
+  height: 200px; /* Start with a fixed height of 200px */
   position: relative;
-  left: 0px; /* Start off-screen to the left */
+  left: 0px;
   transition: left 0.5s ease; /* Smooth sliding transition */
   text-align: center;
-  margin-bottom: 50px; 
+  margin-bottom: 50px;
 }
 
-#calculateEstimate{
-  padding: 10px; 
+/* Media query to control width behavior */
+@media screen and (max-width: 1220px) {
+  #calculateRoomSpecs {
+    width: auto; /* Allow the width to become flexible */
+    /* max-width: 90%; Limit the width when it starts squeezing */
+  }
+}
+
+
+#calculateEstimate {
+  padding: 10px;
   display: flex;
   background-color: grey;
   border-top-left-radius: 50px;
@@ -857,12 +935,20 @@ body, h1, h2, p, ul, li {
   width: 1200px;
   height: 200px;
   position: relative;
-  left: calc(100% - 1220px); /* Move it to the right side */
+  left: calc(100% - 1200px); /* Adjust based on element width */
   transition: right 0.5s ease; /* Smooth sliding transition */
   text-align: center;
-  margin-bottom: 50px; 
+  margin-bottom: 50px;
 }
 
+/* Media query to control width behavior */
+@media screen and (max-width: 1220px) {
+  #calculateEstimate {
+    width: auto; /* Allow the width to become flexible */
+    /* max-width: 90%; Limit the width when it starts squeezing */
+    left: 0; /* Reset the left position to start from the left side */
+  }
+}
 
 
 
