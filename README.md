@@ -1,2 +1,0 @@
-# EstiPaint
-Paint-Estimating-Application
