@@ -3,7 +3,7 @@
 const parentDiv = document.getElementById('mainPage');
 parentDiv.classList.add('pDiv');
 /* ------------------------------------- The drag and drop functionality ----------------------------------- */
- 
+console.log('testing commit...'); 
 //  Function to handle the drag-and-drop functionality
 // Function to handle the vertical drag-and-drop functionality
 function enableDragAndDrop() {
